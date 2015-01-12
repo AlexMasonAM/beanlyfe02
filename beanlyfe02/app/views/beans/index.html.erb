@@ -1,0 +1,27 @@
+<h2>Show me somes beans</h2>
+<ul>
+  <l1><%= link_to "All Beans", beans_path %></li>
+  <li><%= link_to "Gold Roast", beans_path(roast: "gold") %></li>
+  <li><%= link_to "Dark Roast", beans_path(roast: "dark") %></li>
+  <li><%= link_to "Light Roast", beans_path(roast: "light") %></li>
+</ul>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th>Year Roasted</th>
+    <th>Quantity</th>
+  </tr>
+  <% @beans.each do |bean| %>
+    <tr>
+       <td><%= bean.name %></td>
+       <td><%= bean.roast %></td>
+       <td><%= bean.origin %></td>
+       <td><%= bean.year_roasted %></td>
+       <td><%= bean.quantity %></td>
+     </tr>
+   <% end %>
+</table>
+<%= link_to "Add a new bean", new_bean_path %>
