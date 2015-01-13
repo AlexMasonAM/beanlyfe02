@@ -1,6 +1,5 @@
 class BeansController < ApplicationController
   def index
-   
       if params[:roast]
         @beans = Bean.where(roast: params[:roast])
       else
