@@ -1,0 +1,9 @@
+<% @firetrucks.each do |firetruck| %>
+  Station: <%= firetruck.engine_house %>
+  Firemen: 
+  <ul>
+    <% firetruck.firemen.each do |fireperson| %>
+      <li> <%= fireperson.name %></li>
+    <% end %>
+  </ul>
+<% end %>
